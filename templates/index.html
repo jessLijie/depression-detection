@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1491/1491313.png">
-    <title>Depression Detection Using ML</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/7921/7921405.png">
+    <title>Depression Detection Using MLP</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
         body {
@@ -62,12 +62,14 @@
         <textarea id="input_text" name="input_text" rows="4" cols="50" required>{{input_text}}</textarea>
         <br>
         <div class="alert alert-success">
-            {{depression_level}}<br>
+           
+           {{probability}} % :
+            {{depression_level}}  <br> 
             <div class="progress m-2">
                 <div class="progress-bar progress-bar-striped {{ progress_bar_color }}" role="progressbar" style="width: {{ probability }}%" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
 
-            <i>{{message}}</i>
+            <i>{{recommendation}}</i>
         </div>
         <center>
             <button type="submit">Submit</button>
