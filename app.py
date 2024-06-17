@@ -46,10 +46,28 @@ def predict():
         depression_level = "Level 3: Severe"
         message = "Your responses indicate that you may be experiencing severe symptoms of depression. It is highly recommended to seek immediate help from a mental health professional. Don't hesitate to reach out to friends or family members for support as well."
 
+    if depression_level == "No Depression":
+        progress_bar_color = "bg-success"
+    elif depression_level == "Level 1: Mild":
+        progress_bar_color = "bg-success"
+    elif depression_level == "Level 2: Moderate":
+        progress_bar_color = "bg-warning"
+    else:
+        progress_bar_color = "bg-danger"
+
+    
     result['depression_level'] = depression_level
     result['recommendation'] = message
+
+    if(input_text.strip() == ""):
+        result['depression_level'] = ""
+        result['recommendation'] = "Please enter some text to analyze."
+    
+    probability = round(probability[0][1]*100, 0)
   
-    return jsonify(result)
+    # return jsonify(result)
+    return render_template('index.html',depression_level= depression_level, message= message,progress_bar_color=progress_bar_color,probability=probability, input_text= input_text)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
