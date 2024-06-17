@@ -17,7 +17,6 @@ def predict():
     input_text = request.form['input_text']
     preprocessed_input = tfidf_vectorizer.transform([input_text])
     
-    # Convert sparse matrix to dense
     preprocessed_input_dense = preprocessed_input.toarray()
     
     prediction = svm_model.predict(preprocessed_input_dense)
