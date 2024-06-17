@@ -98,7 +98,7 @@ def predict_svm():
     return render_template('test.html',depression_level= depression_level, message= message,progress_bar_color=progress_bar_color,probability=probability, input_text= input_text)
 
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict-mlp', methods=['POST'])
 def predict():
     input_text = request.form['input_text']
 

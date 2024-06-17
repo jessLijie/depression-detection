@@ -55,8 +55,8 @@
     </style>
 </head>
 <body>
-    {% if request.path == '/predict' %}
-    <form action="/predict" method="post">
+    {% if request.path == '/predict-mlp' %}
+    <form action="/predict-mlp" method="post">
         <h1>Depression Detection</h1>
         <label for="input_text">Enter your thoughts:</label>
         <textarea id="input_text" name="input_text" rows="4" cols="50" required>{{input_text}}</textarea>
@@ -76,7 +76,7 @@
         </center>
     </form>
     {% else %}
-    <form action="/predict" method="post">
+    <form action="/predict-mlp" method="post">
         <h1>Depression Detection</h1>
         <label for="input_text">Enter your text:</label>
         <textarea id="input_text" name="input_text" rows="4" cols="50" required></textarea>
